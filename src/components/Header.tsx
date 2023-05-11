@@ -1,22 +1,25 @@
 import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import Stack from "@mui/material/Stack";
 
-const tabs: { label: string; to: string }[] = [
+const tabs: { label: string; path: string }[] = [
   {
     label: "Home",
-    to: "/",
+    path: "/",
   },
   {
     label: "Projects",
-    to: "/projects",
+    path: "/projects",
   },
 ];
 
 export function Header() {
-  const [value, setValue] = useState(0);
+  const location = useLocation();
+  const [value, setValue] = useState(
+    tabs.findIndex((tab) => tab.path === location.pathname)
+  );
 
   return (
     <Stack direction="row" justifyContent="end">
@@ -45,7 +48,7 @@ export function Header() {
           <Tab
             label={tab.label}
             component={Link}
-            to={tab.to}
+            to={tab.path}
             sx={{
               textTransform: "none",
               color: "black",
