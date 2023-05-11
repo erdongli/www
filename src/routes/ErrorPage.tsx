@@ -1,4 +1,5 @@
-import { Fragment } from "react";
+import { Stack, Typography } from "@mui/material";
+import Box from "@mui/material/Box";
 import { isRouteErrorResponse, useRouteError } from "react-router-dom";
 
 export function ErrorPage() {
@@ -6,16 +7,22 @@ export function ErrorPage() {
   console.log(error);
 
   return (
-    <Fragment>
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>
+    <Box
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      textAlign="center"
+      minHeight="100vh"
+    >
+      <Stack direction="column">
+        <Typography variant="h1">Oops!</Typography>
+        <Typography>Sorry, an unexpected error has occurred.</Typography>
+        <Typography component="i">
           {isRouteErrorResponse(error)
             ? error.statusText
             : "Something Went Wrong"}
-        </i>
-      </p>
-    </Fragment>
+        </Typography>
+      </Stack>
+    </Box>
   );
 }
