@@ -51,7 +51,7 @@ export function Header() {
             to={tab.path}
             sx={{
               textTransform: "none",
-              fontSize: "25px",
+              fontSize: "20px",
               fontWeight: "normal",
               color: "black",
               "&.Mui-selected": {
