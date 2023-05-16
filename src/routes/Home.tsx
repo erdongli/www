@@ -21,8 +21,8 @@ export function Home(): JSX.Element {
             },
           }}
         >
-          <Typography sx={{ fontSize: "125px" }}>Hi,</Typography>
-          <Typography sx={{ fontSize: "25px" }}>my name is Erdong.</Typography>
+          <Typography sx={{ fontSize: "100px" }}>Hi,</Typography>
+          <Typography sx={{ fontSize: "20px" }}>my name is Erdong.</Typography>
           <Stack
             direction="row"
             sx={{
