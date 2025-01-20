@@ -1,0 +1,3 @@
+[submodule "gospa"]
+	path = gospa
+	url = git@github.com:erdongli/gospa.git
