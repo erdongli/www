@@ -13,7 +13,7 @@ NAMESPACE="www"                               # Namespace to deploy to
 GIT_SHA=$(git rev-parse --short HEAD)
 echo "Current Git SHA: ${GIT_SHA}"
 
-IMAGE="us-central1-docker.pkg.dev/hargow/hargow/www:${GIT_SHA}"
+IMAGE="us-central1-docker.pkg.dev/hargow/docker/www:${GIT_SHA}"
 
 echo "Building Docker image: ${IMAGE}"
 docker buildx build --platform=linux/amd64 -t "${IMAGE}" .
